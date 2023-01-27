@@ -48,5 +48,22 @@ public class appointment {
                          + " 22    23       24     25       26     27       28\n"
                          + " 29    30       31\n");
     }
+    public void serviecesList() {
+        System.out.println("_________________\n"
+                          +"                   SERVICE LIST                 \n"+
+                           "_________________");
+        System.out.println("                 NAILS                 |Price\n\n"
+                         + "1 | classic mani&ped                   |200 RS\n"
+                         + "2 | nail color                         | 30 RS\n"
+                         + "3 | french nail color                  | 40 RS\n"
+                         + "_________________\n"
+                         + "                 HAIR CUT              |Price\n\n"
+                         + "4 | trimming                           |100 RS\n"
+                         + "5 | styling                            |250 RS\n"
+                         + "_________________\n"
+                         + "                 HAIR STYLING          |Price\n\n"
+                         + "6 | short or medium length             |200 RS\n"
+                         + "7 | long length                        |300 RS\n");
+    }
 
 }
