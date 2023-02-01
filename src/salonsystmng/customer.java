@@ -10,13 +10,6 @@ public class customer extends user {
         super(firstName, lastName, ID, password, email, phone);
     }
 
-    public boolean login(String ID, String password) {
-        if ((this.getID().equals(ID)) && this.getPassword().equals(password)) {
-            return true;
-        } else {
-            return false;
-        }
 
-    }
 
 }

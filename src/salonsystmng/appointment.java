@@ -1,20 +1,14 @@
 package salonsystmng;
+import java.util.Scanner;
+
 
 public class appointment {
-
+Scanner s=new Scanner(System.in);
+private int service[]=new int[7];
     private String reservationID;
     private String reservationDate;
     private user cust;
-    private String service;
     private String paymentMethod;
-
-    public appointment(String reservationID, String reservationDate, user cust, String service, String paymentMethod) {
-        this.reservationID = reservationID;
-        this.reservationDate = reservationDate;
-        this.cust = cust;
-        this.service = service;
-        this.paymentMethod = paymentMethod;
-    }
 
     public void setReservationID(String reservationDate, user cust) {
         this.reservationID = (cust.getID() +"_"+ reservationDate);
@@ -28,11 +22,20 @@ public class appointment {
     public void setCus(user cust) {
         this.cust = cust;
     }
-
-    public void setService(String service) {
-        this.service = service;
+        public boolean checkService(int i){
+        boolean found=false;
+        for(int j=0;j<service.length;j++)
+            if(service[j]==i){
+                found=true;
+            }
+    return found;
     }
-
+    public void getService() {
+               for(int j=0;j<service.length;j++){
+               if(service[j]!=0)
+               System.out.println(service[j]);
+    }
+    }
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
@@ -49,6 +52,7 @@ public class appointment {
                          + " 29    30       31\n");
     }
     public void serviecesList() {
+         int a=7;
         System.out.println("_________________\n"
                           +"                   SERVICE LIST                 \n"+
                            "_________________");
@@ -64,6 +68,52 @@ public class appointment {
                          + "                 HAIR STYLING          |Price\n\n"
                          + "6 | short or medium length             |200 RS\n"
                          + "7 | long length                        |300 RS\n");
+         System.out.println("________________________________________");
+        System.out.println("choose the service you want by its number");
+        System.out.println("choose number 0 if you finsht");
+        for(int i=0;i<=a;i++){
+            int x=s.nextInt();
+            switch(x){
+                 case 1:{
+                     if(checkService(x)==false)
+                       service[i]=x;
+                  else
+                     System.out.println("you choosed this service befor");}
+                break;
+                 case 2:{if(checkService(x)==false)
+                     service[i]=x;
+                 else
+                     System.out.println("you choosed this service befor");}
+                break;
+                 case 3:{if(checkService(x)==false)
+                     service[i]=x;
+                 else
+                     System.out.println("you choosed this service befor");}
+                break;
+                 case 4:{if(checkService(x)==false)
+                     service[i]=x;
+                 else
+                     System.out.println("you choosed this service befor");}
+                break;
+                 case 5:{if(checkService(x)==false)
+                     service[i]=x;
+                 else
+                     System.out.println("you choosed this service befor");}
+                break;
+                 case 6:{if(checkService(x)==false)
+                     service[i]=x;
+                 else
+                     System.out.println("you choosed this service befor");}
+                break;
+                 case 7:{if(checkService(x)==false)
+                     service[i]=x;
+                 else
+                     System.out.println("you choosed this service befor");}
+                break;
+                 case 0: 
+                 a=-1;
+                 }      
+            }
     }
 
 }
