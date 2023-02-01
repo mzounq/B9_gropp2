@@ -16,6 +16,15 @@ private String phone;
         this.email = email;
         this.phone = phone;
     }
+    
+      public boolean login(String ID, String password) {
+        if ((this.getID().equals(ID)) && this.getPassword().equals(password)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
     public String getFirstName() {
         return firstName;
