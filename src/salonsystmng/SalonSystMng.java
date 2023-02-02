@@ -8,7 +8,7 @@ public class SalonSystMng {
 
     void display() {
         System.out.println("------------------------------");
-        System.out.println("--  Welcome in MELDA Salon --");
+        System.out.println("--  Welcome in *nameofsalon* Salon --");
         System.out.println("--  Enter your account    --");
         System.out.println("------------------------------");
     }
@@ -24,7 +24,6 @@ public class SalonSystMng {
     }
 
     public static void main(String[] args) {
-
         appointment ap = null;
         Scanner s = new Scanner(System.in);
         SalonSystMng a = new SalonSystMng();
@@ -43,29 +42,57 @@ public class SalonSystMng {
             new reception("rafan", "saud", "00876123", "ra287", "ra@gmail.com", "0587247665", 3000)
         };
         a.display();
-
         boolean v = true;
-
-        while (v == true) {
-            int z = 0;
-            System.out.println("Enter your Email");
-            email = s.next();
-            System.out.println("Enter your Password");
-            password = s.next();
-            for (user arr1 : arr) {
-                if (arr1.getPassword().equals(password) && arr1.getEmail().equals(email)) {
-                    System.out.println("--------Welcome " + arr1.getFirstName() + "------");
-                    z++;
-                    v = false;
-                    ap = new appointment();
+        while (true) {
+            while (v == true) {
+                int z = 0;
+                System.out.println("Enter your Email");
+                email = s.next();
+                System.out.println("Enter your Password");
+                password = s.next();
+                for (user arr1 : arr) {
+                    if (arr1.getPassword().equals(password) && arr1.getEmail().equals(email)) {
+                        System.out.println("--------Welcome " + arr1.getFirstName() + "------");
+                        z++;
+                        v = false;
+                        ap = new appointment();
+                    }
+                }
+                if (z == 0) {
+                    System.out.println("connt found your acconut");
+                    System.out.println("------------------------------");
                 }
             }
-            if (z == 0) {
-                System.out.println("connt found your acconut");
-                System.out.println("------------------------------");
+            int x;
+            a.show();
+            x = s.nextInt();
+            switch (x) {
+                case 1: {
+                    ap.serviecesList();
+                }
+                break;
+                case 2:
+                    ap.availableDate();
+                    break;
+                case 3: {
+                    for (user arr1 : arr) {
+                        if (arr1.getPassword().equals(password) && arr1.getEmail().equals(email)) {
+                            ap.displayBill(arr1.getFirstName());
+                        }
+                    }
+                }
+                break;
+                case 4: {
+                    for (user arr1 : arr) {
+                        if (arr1.getPassword().equals(password) && arr1.getEmail().equals(email)) {
+                            arr1.getinfo();
+                        }
+                    }
+                }
+                break;
+                case 5:
+                    v = true;
             }
         }
-
     }
-
 }

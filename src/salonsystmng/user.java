@@ -16,16 +16,6 @@ private String phone;
         this.email = email;
         this.phone = phone;
     }
-    
-      public boolean login(String ID, String password) {
-        if ((this.getID().equals(ID)) && this.getPassword().equals(password)) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -73,7 +63,14 @@ private String phone;
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-
-
+    public void getinfo() {
+        System.out.println("_______________________________________________");
+        System.out.println("First NAME:"+getFirstName()+"\n"
+                          +"last NAME :"+getLastName()+"\n"
+                          +"ID        :"+getID()+"\n"
+                          +"PASSWORD  :"+getPassword()+"\n"
+                          +"EMAIL     :"+getEmail()+"\n"
+                          +"PHONE     :"+getPhone()+"\n");
+        System.out.println("_______________________________________________");
+    }   
 }
