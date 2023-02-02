@@ -55,7 +55,7 @@ public class SalonSystMng {
                         System.out.println("--------Welcome " + arr1.getFirstName() + "------");
                         z++;
                         v = false;
-                        ap = new appointment();
+                        ap = new appointment(null, arr1);
                     }
                 }
                 if (z == 0) {
@@ -77,7 +77,7 @@ public class SalonSystMng {
                 case 3: {
                     for (user arr1 : arr) {
                         if (arr1.getPassword().equals(password) && arr1.getEmail().equals(email)) {
-                            ap.displayBill(arr1.getFirstName());
+                            ap.displayBill(arr1);
                         }
                     }
                 }
