@@ -8,7 +8,7 @@ public class SalonSystMng {
 
     void display() {
         System.out.println("------------------------------");
-        System.out.println("--  Welcome in *nameofsalon* Salon --");
+        System.out.println("--  Welcome in MELDA Salon --");
         System.out.println("--  Enter your account    --");
         System.out.println("------------------------------");
     }
